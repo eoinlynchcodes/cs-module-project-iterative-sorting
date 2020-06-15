@@ -51,8 +51,16 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
+def count_sort(arr, maximum=None):
     # Your code here
+    max = maximum + 1
+    count = [0] * max
 
-
-    return arr
+    for a in arr:
+        count[a] += 1
+    i = 0
+    for a in range(max):
+        for c in range(count[a]):
+            arr[i] = a
+            i += 1
+        return arr
