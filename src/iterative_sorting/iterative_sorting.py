@@ -8,7 +8,6 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
-
         # TO-DO: swap
         # Your code here
 
@@ -17,12 +16,24 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    has_swapped = True
 
+    while(has_swapped):
+        has_swapped = False
+        for i in range(len(arr) - 1 ):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                has_swapped = True
 
     return arr
 
+this_array = [ 2, 4, 5, 3, 56, 33, 55, 77, 33, 1, 54 ]
+
+bubble_sort(this_array)
+print(this_array)
+
 '''
+
 STRETCH: implement the Count Sort function below
 
 Counting sort is a sorting algorithm that works on a set of data where
